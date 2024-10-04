@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration-page</title>
+</head>
+<body>
+<form th:method="POST"
+      th:action="@{/auth/registration}"
+      th:object="${newRegistrationPerson}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <p>REGISTRATION</p>
+    <label for="nameId">NAME</label>
+    <input type="text" th:field="*{name}" id="nameId">
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <br>
+    <label for="lastnameId">LASTNAME</label>
+    <input type="text" th:field="*{lastname}" id="lastnameId">
+    <div style="color: red" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></div>
+    <br>
+    <label for="emailId">EMAIL</label>
+    <input type="text" th:field="*{email}" id="emailId">
+    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    <br>
+    <label for="usernameId">USERNAME</label>
+    <input type="text" th:field="*{username}" id="usernameId">
+    <div style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+    <br>
+    <label for="passwordId">PASSWORD</label>
+    <input type="text" th:field="*{password}" id="passwordId">
+    <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    <br>
+    <input type="submit" value="Save">
+</form>
+
+<form th:method="GET" th:action="@{/auth/login}">
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>
