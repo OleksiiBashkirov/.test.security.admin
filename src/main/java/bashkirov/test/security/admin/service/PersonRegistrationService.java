@@ -19,7 +19,7 @@ public class PersonRegistrationService {
     public void register(Person person) {
         person.setPassword(passwordEncoder.encode(person.getPassword()));
         person.setRole(Role.ROLE_USER);
-        person.setEnable(true);
+        person.setEnable(false);
 
         String key = activationService.generateKey(person.getEmail());
         emailService.sendEmail(new EmailDto(

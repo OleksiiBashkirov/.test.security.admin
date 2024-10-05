@@ -1,11 +1,12 @@
 package bashkirov.test.security.admin.security;
 
 import bashkirov.test.security.admin.model.Person;
-import java.util.Collection;
-import java.util.Collections;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.Collections;
 
 public record PersonDetails(Person person) implements UserDetails {
     @Override
@@ -40,7 +41,7 @@ public record PersonDetails(Person person) implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
-//        return person.isEnable();
+//        return true;
+        return person.isEnable();
     }
 }
