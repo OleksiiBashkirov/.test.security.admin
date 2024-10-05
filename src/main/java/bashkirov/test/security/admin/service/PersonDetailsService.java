@@ -3,7 +3,6 @@ package bashkirov.test.security.admin.service;
 import bashkirov.test.security.admin.enumeration.Role;
 import bashkirov.test.security.admin.model.Person;
 import bashkirov.test.security.admin.security.PersonDetails;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -44,7 +45,7 @@ public class PersonDetailsService implements UserDetailsService {
         ).stream().findAny();
     }
 
-    private static RowMapper<Person> getPersonRowMapper() {
+    public static RowMapper<Person> getPersonRowMapper() {
         return (rs, rowNum) -> {
             Person person = new Person();
             person.setName(rs.getString("name"));
