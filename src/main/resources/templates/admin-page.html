@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin-page</title>
+</head>
+<body>
+<form th:method="PATCH"
+      th:action="@{/admin/add}">
+    <label for="adminSelectId">ASSIGN AS ADMIN:</label>
+    <select th:object="${person}" th:field="*{id}" id="adminSelectId">
+        <option th:each="user : ${personUserList}"
+                th:value="${user.getId()}"
+                th:text="${user.getId() + '. ' + user.getName() + ' ' + user.getLastname()}">
+        </option>
+    </select>
+    <input type="submit" value="Assign">
+</form>
+<br>
+<p>ADMIN LIST:</p>
+<div th:each="admin : ${personAdminList}">
+    <p th:text="${admin.getId() + '. ' + admin.getName() + ' ' + admin.getLastname()}" style="display: inline;">
+    </p>
+    <form th:method="PATCH" th:action="@{/admin/remove/{id}(id=${admin.getId()})}" style="display: inline;">
+        <input type="submit" value="Release">
+    </form>
+</div>
+</body>
+</html>

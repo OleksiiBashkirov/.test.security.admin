@@ -4,6 +4,7 @@ import bashkirov.test.security.admin.enumeration.Role;
 import bashkirov.test.security.admin.model.Person;
 import bashkirov.test.security.admin.security.PersonDetails;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -58,4 +60,34 @@ public class PersonDetailsService implements UserDetailsService {
             return person;
         };
     }
+
+    public void addAdmin(int id) {
+        jdbcTemplate.update(
+                "update person set role = 'ROLE_ADMIN' where id = ?",
+                id
+        );
+    }
+
+    public void removeAdmin(int id) {
+        jdbcTemplate.update(
+                "update person set role = 'ROLE_USER' where id = ?",
+                id
+        );
+    }
+
+    public List<Person> getAllPersonAdmin() {
+        return jdbcTemplate.query(
+                "select * from person where role = 'ROLE_ADMIN'",
+                new BeanPropertyRowMapper<>(Person.class)
+        );
+    }
+
+    public List<Person> getAllPersonUser() {
+        return jdbcTemplate.query(
+                "select * from person where role = 'ROLE_USER'",
+                new BeanPropertyRowMapper<>(Person.class)
+        );
+    }
+
+
 }

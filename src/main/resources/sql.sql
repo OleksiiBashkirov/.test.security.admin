@@ -20,8 +20,53 @@ create table activation
     email varchar not null
 );
 
-select * from activation;
+select *
+from activation;
 
-delete from activation;
+delete
+from activation;
 
-delete from person;
+delete
+from person;
+
+INSERT INTO person (name, lastname, email, username, password, role, is_enable)
+VALUES ('User1', 'Lastname1', 'user1@example.com', 'user1',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User2', 'Lastname2', 'user2@example.com', 'user2',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User3', 'Lastname3', 'user3@example.com', 'user3',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User4', 'Lastname4', 'user4@example.com', 'user4',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User5', 'Lastname5', 'user5@example.com', 'user5',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User6', 'Lastname6', 'user6@example.com', 'user6',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User7', 'Lastname7', 'user7@example.com', 'user7',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User8', 'Lastname8', 'user8@example.com', 'user8',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User9', 'Lastname9', 'user9@example.com', 'user9',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User10', 'Lastname10', 'user10@example.com', 'user10',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User11', 'Lastname11', 'user11@example.com', 'user11',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User12', 'Lastname12', 'user12@example.com', 'user12',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User13', 'Lastname13', 'user13@example.com', 'user13',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User14', 'Lastname14', 'user14@example.com', 'user14',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User15', 'Lastname15', 'user15@example.com', 'user15',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User16', 'Lastname16', 'user16@example.com', 'user16',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User17', 'Lastname17', 'user17@example.com', 'user17',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User18', 'Lastname18', 'user18@example.com', 'user18',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User19', 'Lastname19', 'user19@example.com', 'user19',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true),
+       ('User20', 'Lastname20', 'user20@example.com', 'user20',
+        '$2a$10$3dAMgRMLoVSyXioFmCtAVeEOSfU7HRVvhTIabyy5sndIew1bOkWXW', 'ROLE_USER', true);
